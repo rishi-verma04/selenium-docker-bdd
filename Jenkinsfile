@@ -11,7 +11,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 //bat
-                sh "docker build -t=rishiyudi04/selenium-docker:${BUILD_NUMBER} ."
+                sh "docker build -t=rishiyudi04/selenium-docker-bdd:${BUILD_NUMBER} ."
             }
         }
         stage('Push Image') {
@@ -20,7 +20,7 @@ pipeline {
                     //sh
 			        sh "docker login --username=${user} --password=${pass}"
 			      //  sh "docker push rishiyudi04/selenium-docker:${BUILD_NUMBER}"
-			        sh "docker push rishiyudi04/selenium-docker:latest"
+			        sh "docker push rishiyudi04/selenium-docker-bdd:latest"
 
 
 			    }
